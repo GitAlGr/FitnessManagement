@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5433/Fitness
+    username: postgres
+    driver-class-name: org.postgresql.Driver
+    password: admin
+
+  liquibase:
+    change-log: classpath:/db/changelog/changelog-master.yaml
+
+  jpa:
+    hibernate:
+      ddl-auto: validate

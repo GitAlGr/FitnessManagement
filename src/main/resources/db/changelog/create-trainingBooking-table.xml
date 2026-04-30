@@ -1,0 +1,35 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+
+    <changeSet id="create-trainingBooking-table" author="Alex">
+        <createTable tableName="training_Bookings">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="client_id" type="BIGINT">
+                <constraints nullable="false"
+                             foreignKeyName="fk_trainingBooking_client"
+                             referencedTableName="clients"
+                             referencedColumnNames="id"/>
+            </column>
+            <column name="trainingSession_id" type="BIGINT">
+                <constraints nullable="false"
+                             foreignKeyName="fk_trainingBooking_trainingSession"
+                             referencedTableName="training_Sessions"
+                             referencedColumnNames="id"/>
+            </column>
+            <column name="booking_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="attended" type="boolean" defaultValue="false">
+                <constraints nullable="false"/>
+            </column>
+            <column name="status" type="varchar(20)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>

@@ -1,0 +1,11 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/create-client-table.xml
+  - include:
+      file: db/changelog/create-membership-table.xml
+  - include:
+      file: db/changelog/create-trainer-table.xml
+  - include:
+      file: db/changelog/create-trainingSession-table.xml
+  - include:
+      file: db/changelog/create-trainingBooking-table.xml
