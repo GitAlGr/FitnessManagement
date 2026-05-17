@@ -33,7 +33,7 @@ public class TrainingSessionController {
         trainingSessionService.add(createTrainingSessionDto);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/by-trainingSessionId/{id}")
     @Operation(summary = "Поиск тренировочной сессии", description = "Поиск тренировочной сессии в базе фитнес клуба по id")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Запись тренировки успешно найдена"),

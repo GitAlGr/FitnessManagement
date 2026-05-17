@@ -16,9 +16,9 @@ public interface ClientRepository extends JpaRepository<Client, Long> {
 
     Optional<Client> findByPhone(String phone);
 
-    List<Client> findByIsActiveTrue();
+    List<Client> findByActiveTrue();
 
-    List<Client> findByIsActiveFalse();
+    List<Client> findByActiveFalse();
 
     boolean existsByEmail(String email);
 

@@ -31,7 +31,7 @@ public class ClientController {
         clientService.add(createClientDto);
     }
 
-    @GetMapping("/{clientId}")
+    @GetMapping("/by-id/{clientId}")
     @Operation(summary = "Поиск клиента", description = "Поиск клиента в базе по id")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Клиент успешно найден"),

@@ -32,7 +32,7 @@ public class MembershipController {
         membershipService.add(createMembershipDto);
     }
 
-    @GetMapping("/{membershipId}")
+    @GetMapping("/by-membershipId/{membershipId}")
     @Operation(summary = "Поиск абонимента", description = "Поиск абонимента в базе по id")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Абонимент успешно найден"),

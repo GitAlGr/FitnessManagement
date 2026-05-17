@@ -31,7 +31,7 @@ public class TrainerController {
         trainerService.add(createTrainerDto);
     }
 
-    @GetMapping("/{trainerId}")
+    @GetMapping("/by-trainerId/{trainerId}")
     @Operation(summary = "Поиск тренера", description = "Поиск тренера в базе по id")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Тренер успешно найден"),
@@ -93,7 +93,7 @@ public class TrainerController {
             @ApiResponse(responseCode = "404", description = "Указаны неверные данные"),
             @ApiResponse(responseCode = "500", description = "Ошибка сервера, попробуйте позже")
     })
-    public List<TrainerResponseDto> findTrainerBySpecialization(@Valid @PathVariable String specialization) {
+    public List<TrainerResponseDto> findTrainersBySpecialization(@Valid @PathVariable String specialization) {
         return trainerService.findBySpecialization(specialization);
     }
 

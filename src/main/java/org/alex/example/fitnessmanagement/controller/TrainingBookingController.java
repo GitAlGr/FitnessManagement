@@ -31,7 +31,7 @@ public class TrainingBookingController {
         trainingBookingService.add(createBookingDto);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/by-trainingBookingId/{id}")
     @Operation(summary = "Поиск записи на тренировку", description = "Поиск записи на тренировку в базе фитнес клуба по id")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Запись на тренировку успешно найдена"),
@@ -118,7 +118,7 @@ public class TrainingBookingController {
         trainingBookingService.markNoShow(id);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/delete/{id}")
     @Operation(summary = "Удаление", description = "Удаление записи на тренировку")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Запись на тренировку успешно удалена"),

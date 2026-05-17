@@ -72,14 +72,14 @@ public class ClientServiceImpl implements ClientService {
     @Override
     public List<ClientResponseDto> findByActiveTrue() {
         log.info("Поиск активных клиентов");
-        List<Client> clients = clientRepository.findByIsActiveTrue();
+        List<Client> clients = clientRepository.findByActiveTrue();
         return clientMapper.toDtoList(clients);
     }
 
     @Override
     public List<ClientResponseDto> findByActiveFalse() {
         log.info("Поиск неактивных клиентов");
-        List<Client> clients = clientRepository.findByIsActiveFalse();
+        List<Client> clients = clientRepository.findByActiveFalse();
         return clientMapper.toDtoList(clients);
     }
 
